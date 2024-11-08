@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercícios de Inglês</title>
     <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./js.js">
 </head>
 <header>
     <div class="container">
@@ -14,7 +15,7 @@
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./conteudo.html">Conteúdos</a></li>
                 <li><a href="./exercicios.html">Exercícios</a></li>
-                <li><a href="#">Dicas</a></li>
+                <li><a href="./dicas.html">Dicas</a></li>
             </ul>
         </nav>
     </div>
@@ -34,11 +35,9 @@
 
     <h2>Exercício 4: Múltipla Escolha</h2>
     <p>Qual é o passado do verbo "run"?
-        <ul>
-            <li><input type="radio" name="q1" value="run">run</li>
-            <li><input type="radio" name="q1" value="ran">ran</li>
-            <li><input type="radio" name="q1" value="runned">runned</li>
-        </ul>
+        <li><input type="radio" name="q1" value="run">run</li>
+        <li><input type="radio" name="q1" value="ran">ran</li>
+        <li><input type="radio" name="q1" value="runned">runned</li>
     </p>
 
     <h2>Exercício 5: Traduza a Frase</h2>
@@ -70,30 +69,74 @@
     <p>Escreva um sinônimo e um antônimo para a palavra "happy".</p>
     Escreva um sinônimo e um antônimo para a palavra "happy"
 
-    <input type="text">
+    <input type="text"> <br>
 
-    <footer>
-        <div class="container">
-            <p>Tec in Feito por Fabrio Sousa &copy; 2024</p>
-        </div>
-    </footer>
+    <button onclick="exibirAlerta()">Enviar</button>
+
+   <footer>
+    <div class="container">
+        <p>Tec in Feito por Fabrio Sousa &copy; 2024</p>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('exercise-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Respostas corretas
+        const correctAnswers = [
+            "", 
+            "He goes to school every day",
+            "The cat is on the table",
+            "ran", 
+            " I'm learning English",
+            "must",
+            "is", 
+            "", 
+            "I am going to the park" 
+        
+        ];
+
+        const userAnswers = document.getElementById('answers').value.split(/\s+/);
+
+        let feedback = '';
+        let anyIncorrect = false;
+        userAnswers.forEach((answer, index) => {
+            if (answer === correctAnswers[index]) {
+                feedback += <p class="correct">Resposta ${index + 1}: Correta (${answer})</p>;
+            } else {
+                feedback += <p class="incorrect">Resposta ${index + 1}: Incorreta (${answer}) - Correto: ${correctAnswers[index]}</p>;
+                anyIncorrect = true;
+            }
+        });
+
+        if (anyIncorrect) {
+            alert("Algumas respostas estão incorretas. Confira seu feedback para mais detalhes.");
+        }
+
+        document.getElementById('result').innerHTML = feedback;
+        document.getElementById('feedback').style.display = 'block';
+    });
+</script>
+
+
 </body>
 </html>
 
 <h1>respostas:
-He goes to school every day: 2 
-The cat is on the table.: 3
-Ran:4
-I'm learning English: 5
+ 2 He goes to school every day:
+3 The cat is on the table.: 
+4 Ran:
+5 I'm learning English: 
 
 
 
-I am going to the park: 9
+ 9 I am going to the park:
 
-Sinônimo:
+ Sinônimo:
 - Glad (contente)
 Antônimo:
-- Sad (triste): 10
+- Sad (triste): 
 
 
 

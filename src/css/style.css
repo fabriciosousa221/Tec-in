@@ -32,7 +32,7 @@
         margin-right: 5px;
     }
     .showcase {
-        min-height: 400px;
+        min-height: 220px;
         background:  #67a3e7;
         color: #fff;
         text-align: center;
@@ -66,9 +66,12 @@
   body {
         text-align: center
     }
- 
-input {
-    min-width: 10%;  
-    
-}
 
+    input {
+    min-width: 10%;  
+    }
+
+button {
+    min-width: 10%; 
+    height: 10%;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./js.js">
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<script>
+    document.getElementById('exercise-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Respostas corretas
+        const correctAnswers = [
+            "", 
+            "He goes to school every day",
+            "The cat is on the table",
+            "ran", 
+            " I'm learning English",
+            "must",
+            "is", 
+            "", 
+            "I am going to the park" 
+        
+        ];
+
+        const userAnswers = document.getElementById('answers').value.split(/\s+/);
+
+        let feedback = '';
+        let anyIncorrect = false;
+        userAnswers.forEach((answer, index) => {
+            if (answer === correctAnswers[index]) {
+                feedback += <p class="correct">Resposta ${index + 1}: Correta (${answer})</p>;
+            } else {
+                feedback += <p class="incorrect">Resposta ${index + 1}: Incorreta (${answer}) - Correto: ${correctAnswers[index]}</p>;
+                anyIncorrect = true;
+            }
+        });
+
+        if (anyIncorrect) {
+            alert("Algumas respostas estão incorretas. Confira seu feedback para mais detalhes.");
+        }
+
+        document.getElementById('result').innerHTML = feedback;
+        document.getElementById('feedback').style.display = 'block';
+    });
+</script>
