@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercícios de Inglês</title>
     <link rel="stylesheet" href="./src/css/style.css">
-    <link rel="stylesheet" href="./js.js">
+    <link rel="stylesheet" href="./script.js">
 </head>
 <header>
     <div class="container">
@@ -46,7 +46,7 @@
     <input type="text">
 
     <h2>Exercício 6: Combine as Palavras</h2>
-    <p>Complete a frase com a opção correta:
+    <p>Complete a frase corretamente: <br>
 
     She <input type="text">(play/plays) the piano every evening.
 
@@ -71,7 +71,11 @@
 
     <input type="text"> <br>
 
-    <button onclick="exibirAlerta()">Enviar</button>
+    <form method="get" action="">
+    <button type="submit">Enviar</button></form>
+
+    <button id="meuBotao">Clique em mim</button>
+    <p> id="mensagem"></p>
 
    <footer>
     <div class="container">
@@ -79,52 +83,26 @@
     </div>
 </footer>
 
-<script>
-    document.getElementById('exercise-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        // Respostas corretas
-        const correctAnswers = [
-            "", 
-            "He goes to school every day",
-            "The cat is on the table",
-            "ran", 
-            " I'm learning English",
-            "must",
-            "is", 
-            "", 
-            "I am going to the park" 
-        
-        ];
+<script type="text/javascript">
+    var resposta='went';
+    function login(){
+     var tentativa = document.getElementById("password").value;
 
-        const userAnswers = document.getElementById('answers').value.split(/\s+/);
-
-        let feedback = '';
-        let anyIncorrect = false;
-        userAnswers.forEach((answer, index) => {
-            if (answer === correctAnswers[index]) {
-                feedback += <p class="correct">Resposta ${index + 1}: Correta (${answer})</p>;
-            } else {
-                feedback += <p class="incorrect">Resposta ${index + 1}: Incorreta (${answer}) - Correto: ${correctAnswers[index]}</p>;
-                anyIncorrect = true;
-            }
-        });
-
-        if (anyIncorrect) {
-            alert("Algumas respostas estão incorretas. Confira seu feedback para mais detalhes.");
-        }
-
-        document.getElementById('result').innerHTML = feedback;
-        document.getElementById('feedback').style.display = 'block';
-    });
-</script>
+     if (tentativa == resposta)
+      alert("Resposta correta");
+     else 
+      alert("Resposta incorreta");
+    }
+    
+    </script>
 
 
 </body>
 </html>
 
 <h1>respostas:
- 2 He goes to school every day:
+
+2 He goes to school every day:
 3 The cat is on the table.: 
 4 Ran:
 5 I'm learning English: 
